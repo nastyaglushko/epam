@@ -1,0 +1,17 @@
+.itemLine {
+  display: flex;
+  justify-content: center;
+}
+
+.pascalTriangleItem {
+  width: 40px;
+}
+
+.bottleItem {
+  width: 25px;
+  height: 25px;
+}
+
+.bottleInfo {
+  color: crimson;
+}
