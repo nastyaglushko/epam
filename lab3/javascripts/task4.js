@@ -27,13 +27,13 @@ function dollarOperation() {
 }
 
 function euroOperation() {
-    let euros = arr.filter(x => x.type === "EUR");
-    let info = "";
-    for (let i = 0; i < euros.length; i++) {
-        euros[i].value *= 2;
-        info += `Value: ${euros[i].value}, type: ${euros[i].type}; `;
-    }
-    moneyCount.euroItem.innerHTML = info;
+    const euros = arr.filter(x => x.type === "EUR");
+    const res = euros.reduce((acum, cur, index) => {
+        euros[index].value *= 2;
+        return acum + `Value: ${ cur.value * 2 }, type: ${ cur.type };`;
+    }, "")
+
+    moneyCount.euroItem.innerHTML = res;
     return euros;
 }
 

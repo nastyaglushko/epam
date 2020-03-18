@@ -4,8 +4,7 @@ const womenNames = ["Jane", "Hazel", "Yen", "Triss"];
 const menNames = ["Sheldon", "Jake", "James", "Tony"];
 const cities = ["Lviv", "London", "Amsterdam", "New York"];
 const jobs = ["Dancer", "Developer", "Engineer", "Manager"];
-
-let userName = "Username";
+userName = "Username";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -13,8 +12,7 @@ function getRandomInt(max) {
 
 function getMarried(sex) {
     let name;
-    if (sex === "w") name = womenNames[getRandomInt(womenNames.length)];
-    else name = menNames[getRandomInt(menNames.length)];
+    sex === "w" ? name = womenNames[getRandomInt(womenNames.length)] : name = menNames[getRandomInt(menNames.length)];
     return `${userName}, you'll get married with ${name} and you'll have ${getRandomInt(
     10
   )} children`;

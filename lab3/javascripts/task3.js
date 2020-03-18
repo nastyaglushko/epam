@@ -25,10 +25,10 @@ function getBottlePyramid(count) {
         info.innerHTML = `${count} bottles are left, one is falling. `;
         bottleGame.bottlesItem.appendChild(info);
         for (let i = 0; i < count; i++) {
-            const b = document.createElement("img");
-            b.src = "../images/bottle.png";
-            b.className = "bottleItem";
-            line.appendChild(b);
+            const bottle = document.createElement("img");
+            bottle.src = "../images/bottle.png";
+            bottle.className = "bottleItem";
+            line.appendChild(bottle);
         }
         bottleGame.bottlesItem.appendChild(line);
         getBottlePyramid(count - 1);
