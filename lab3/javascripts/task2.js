@@ -5,8 +5,9 @@ const PascalTriangle = {
 
     renderPascalTriangle: function() {
         const rows = this.rowsCountItem.value;
-        if (rows < 0 || rows > 20) alert("Number must be between 0 and 20!");
-        else {
+        if (rows < 0 || rows > 20) {
+            alert("Number must be between 0 and 20!");
+        } else {
             this.pascalTriangleItem.innerHTML = "";
             for (let i = 0; i < rows; i++) {
                 const triangleLineElement = document.createElement("div");
@@ -25,7 +26,7 @@ const PascalTriangle = {
 };
 
 function getPascalTriangleLine(rowNumber) {
-    let row = [];
+    const row = [];
     for (let col = 0; col < rowNumber + 1; col++) {
         row[col] =
             factorial(rowNumber) / (factorial(col) * factorial(rowNumber - col));
@@ -34,7 +35,7 @@ function getPascalTriangleLine(rowNumber) {
 }
 
 function factorial(number) {
-    return (number >= 1) ? number * factorial(number - 1) : 1;
+    return number >= 1 ? number * factorial(number - 1) : 1;
 }
 
 PascalTriangle.renderButton.onclick = function() {

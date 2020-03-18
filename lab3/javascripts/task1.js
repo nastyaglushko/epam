@@ -4,7 +4,7 @@ const womenNames = ["Jane", "Hazel", "Yen", "Triss"];
 const menNames = ["Sheldon", "Jake", "James", "Tony"];
 const cities = ["Lviv", "London", "Amsterdam", "New York"];
 const jobs = ["Dancer", "Developer", "Engineer", "Manager"];
-userName = "Username";
+let userName = "Username";
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
@@ -25,10 +25,10 @@ function getWork() {
 }
 
 playButton.onclick = function() {
-    let userInput = prompt("What is your name?", userName);
+    const userInput = prompt("What is your name?", userName);
     if (userInput === null) alert("You cancelled game.");
     else {
-        if (userInput !== "") userName = userInput;
+        if (userInput) userName = userInput;
         if (confirm("Do you prefer women?")) {
             alert(getMarried("w"));
         } else {

@@ -1,4 +1,4 @@
-let arr = [
+const arr = [
     { value: 100, type: "USD" },
     { value: 215, type: "EUR" },
     { value: 7, type: "EUR" },
@@ -30,7 +30,7 @@ function euroOperation() {
     const euros = arr.filter(x => x.type === "EUR");
     const res = euros.reduce((acum, cur, index) => {
         euros[index].value *= 2;
-        return acum + `Value: ${ cur.value * 2 }, type: ${ cur.type };`;
+        return acum + `Value: ${ euros[index].value }, type: ${ cur.type };`;
     }, "")
 
     moneyCount.euroItem.innerHTML = res;

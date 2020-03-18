@@ -5,8 +5,9 @@ const bottleGame = {
 
     startGame: function() {
         const bottles = this.bottlesCountItem.value;
-        if (bottles < 0) alert("Number must be more than 0!");
-        else {
+        if (bottles < 0) {
+            alert("Number must be more than 0!");
+        } else {
             this.bottlesItem.innerHTML = "";
             getBottlePyramid(bottles);
         }
