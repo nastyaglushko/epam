@@ -1,13 +1,8 @@
-$mainnewsbg: #f7f9fa;
-$font-ptsans: 'PT Sans';
-$font-ptserif: 'PT Serif';
-$computerwidth: 940px;
-$mobilewidth: 640px;
 .misc {
     margin-top: 30px;
     grid-column: 1 / 13;
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr repeat(5, 2fr) 1fr;
     grid-column-gap: 20px;
     border-bottom: 2px solid;
     height: 220px;
