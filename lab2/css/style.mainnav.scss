@@ -1,0 +1,36 @@
+$mainnewsbg: #f7f9fa;
+$font-ptsans: 'PT Sans';
+$font-ptserif: 'PT Serif';
+$computerwidth: 940px;
+$mobilewidth: 640px;
+.mainnav {
+    align-items: center;
+    position: relative;
+    display: flex;
+    grid-row: 1;
+    grid-column: 1 / 13;
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+    &__link {
+        text-decoration: none;
+        font-family: $font-ptsans;
+        font-size: 18px;
+        line-height: 30px;
+        color: black;
+        margin-right: 9px;
+        margin-left: 9px;
+    }
+    &__icon {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+    @media (max-width: 980px) {
+        .mainnav {
+            &__link {
+                font-size: 14px;
+                margin-right: 5px;
+            }
+        }
+    }
+}

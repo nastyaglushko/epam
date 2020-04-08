@@ -1,0 +1,33 @@
+$mainnewsbg: #f7f9fa;
+$font-ptsans: 'PT Sans';
+$font-ptserif: 'PT Serif';
+$computerwidth: 940px;
+$mobilewidth: 640px;
+.footer {
+    height: 90px;
+    background: #f7f9fa;
+    border-top: 1px solid #d7d8d9;
+    font-family: $font-ptsans;
+    font-size: 12px;
+    &__li {
+        display: inline;
+        margin-right: 5px;
+    }
+    &__block {
+        padding-top: 20px;
+        width: $computerwidth;
+        margin: 0 auto;
+    }
+    &__links {
+        margin-top: 20px;
+        color: #8aa1c5;
+        cursor: pointer;
+    }
+    @media (max-width: 980px) {
+        .footer {
+            &__block {
+                width: $mobilewidth;
+            }
+        }
+    }
+}
