@@ -1,0 +1,44 @@
+:root {
+    --border-width: 1px;
+}
+
+.img_border {
+    border: 1px solid;
+    border-width: var(--border-width);
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+.img_border-blue {
+    border-color: blue;
+}
+
+.img_border-red {
+    border-color: red;
+}
+
+.img_border-green {
+    border-color: green;
+}
+
+.img_border-yellow {
+    border-color: yellow;
+}
+
+.img_border-black {
+    border-color: black;
+}
+
+.img_border-violet {
+    border-color: blueviolet;
+}
+
+.img_border-pink {
+    border-color: rgb(226, 43, 186);
+}
+
+.img_border-orange {
+    border-color: rgb(255, 166, 0);
+}
