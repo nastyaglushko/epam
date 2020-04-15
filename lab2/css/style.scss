@@ -1,0 +1,31 @@
+$mainnewsbg: #f7f9fa;
+$font-ptsans: 'PT Sans';
+$font-ptserif: 'PT Serif';
+$computerwidth: 940px;
+$mobilewidth: 640px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column-gap: 20px;
+    width: $computerwidth;
+    margin: 0 auto;
+    @media (max-width: 980px) {
+        .container {
+            width: $mobilewidth;
+        }
+    }
+}
+
+@import 'style.footer.scss';
+@import 'style.mainnav.scss';
+@import 'style.mainnews-wrapper.scss';
+@import 'style.misc.scss';
+@import 'style.omgnews-wrapper.scss';
+@import 'style.upper.scss';
+@import 'style.video-side.scss';

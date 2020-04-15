@@ -1,0 +1,134 @@
+.misc {
+    margin-top: 30px;
+    grid-column: 1 / 13;
+    display: grid;
+    grid-template-columns: 1fr repeat(5, 2fr) 1fr;
+    grid-column-gap: 20px;
+    border-bottom: 2px solid;
+    height: 220px;
+    margin-bottom: 20px;
+    &__heading {
+        grid-column: 1 / 8;
+        grid-row: 1;
+        width: 100%;
+    }
+    &__headline {
+        position: relative;
+        z-index: 1;
+        font-family: $font-ptsans;
+        font-size: 24px;
+        text-align: left;
+        font-weight: normal;
+        &::before {
+            border-top: 2px solid #000000;
+            content: "";
+            margin: 0 auto;
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+    &__title {
+        background: #fff;
+        padding: 0 5px;
+    }
+    &__item {
+        justify-content: center;
+        display: grid;
+        grid-template-rows: 20px 94px auto;
+        font-family: $font-ptsans;
+        font-size: 14px;
+    }
+    &__arrow-image {
+        display: flex;
+        align-items: center;
+        grid-row: 2;
+        height: 94px;
+        width: 50px;
+    }
+    &__span {
+        grid-row: 1;
+        color: #c70000;
+    }
+    &__image {
+        display: block;
+        grid-row: 2;
+        height: 94px;
+        width: 140px;
+    }
+    &__description {
+        grid-row: 3;
+        color: #3d76cc;
+    }
+    &__last {
+        display: grid;
+        grid-template-rows: 20px 94px auto;
+        overflow: hidden;
+        position: relative;
+        font-family: $font-ptsans;
+        font-size: 14px;
+    }
+    &__last-description {
+        max-height: 55px;
+        overflow: hidden;
+    }
+    &__last-paragraph {
+        grid-row: 3;
+        opacity: 0.3;
+        color: #3d76cc;
+    }
+    &__last-image {
+        margin: auto;
+    }
+    &__last-span {
+        grid-row: 1;
+        color: #c70000;
+        opacity: 0.3;
+    }
+    &__last-item-image {
+        display: block;
+        grid-row: 2;
+        height: 94px;
+        width: 70px;
+        background-image: url('./img/misc_food.png');
+        opacity: 0.3;
+    }
+    &__last-arrow-image {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        grid-row: 2;
+        height: 94px;
+        width: 50px;
+        opacity: 1;
+    }
+    @media (max-width: 980px) {
+        .misc {
+            grid-column-gap: 3px;
+            &__item {
+                grid-template-rows: 20px 80px auto;
+            }
+            &__image {
+                width: 100px;
+            }
+            &__img {
+                width: 100px;
+            }
+            &__arrow-image {
+                height: 67.14;
+            }
+            &__last {
+                grid-template-rows: 20px 80px auto;
+            }
+            &__last-item-image {
+                height: 67.14;
+            }
+            &__last-arrow-image {
+                height: 67.14;
+            }
+        }
+    }
+}
