@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Task 1</title>
+    <link rel="stylesheet" href="./stylesheets/style.css" type="text/css">
+    <script>
+        window.onload = function() {
+            var drawingCanvas = document.getElementById('smile');
+            if (drawingCanvas && drawingCanvas.getContext) {
+                var context = drawingCanvas.getContext('2d');
+                // Рисуем окружность 
+                context.strokeStyle = "#000";
+                context.fillStyle = "#fc0";
+                context.beginPath();
+                context.arc(100, 100, 50, 0, Math.PI * 2, true);
+                context.closePath();
+                context.stroke();
+                context.fill();
+                // Рисуем левый глаз 
+                context.fillStyle = "#fff";
+                context.beginPath();
+                context.arc(84, 90, 8, 0, Math.PI * 2, true);
+                context.closePath();
+                context.stroke();
+                context.fill();
+                // Рисуем правый глаз 
+                context.beginPath();
+                context.arc(116, 90, 8, 0, Math.PI * 2, true);
+                context.closePath();
+                context.stroke();
+                context.fill();
+                // Рисуем рот
+                context.beginPath();
+                context.moveTo(70, 115);
+                context.quadraticCurveTo(100, 130, 130, 115);
+                context.quadraticCurveTo(100, 150, 70, 115);
+                context.closePath();
+                context.stroke();
+                context.fill();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Art corner</h1>
+    </header>
+
+    <main>
+        <p>Lab finished at <time datetime="2020-03-01 19:00">thursday</time>.</p>
+
+        <nav>
+            <a href="./task2.html">Task 2</a> | <a href="./task3.html">Task 3</a> |
+            <a href="./task4.html">Task 4</a> | <a href="./task5.html">Task 5</a>
+        </nav>
+        <aside>
+            <p>Створюйте власні статті</p>
+            <p>Переглядайте чужу творчість</p>
+            <p>Слідкуйте за новинками</p>
+            <p>Музика для комфортного перегляду</p>
+            <br>
+            <audio controls>
+            <source src="./music/bah.mp3" type="audio/ogg; codecs=vorbis">
+            <a href="./music/bah.mp3">Скачайте музыку</a>.
+          </audio>
+        </aside>
+
+        <article>
+            <p>Ти потрапив на сторінку,<wbr> яка допоможе тобі знайти саме те, <wbr>що тобі до душі!<wbr> Тут міститься колекція різноманітних картин. <wbr>Ти зможеш знайти твого улюбленого письменника<wbr> або, можливо, щось новеньке та цікаве для себе.
+                <br>Приємного відпочинку)</p>
+        </article>
+        <p>Оберіть улюбленого художника:</p>
+        <p><input list="character">
+            <datalist id="character">
+                <option value="Ван Гог"></option>
+                <option value="Леонардо да Вінчі"></option>
+                <option value="Сальвадор Далі"></option>
+                <option value="Эдвард Мунк"></option>
+                <option value="Анри Матисс"></option>
+                <option value="Пабло Пикассо"></option>
+                <option value="Клод Моне"></option>
+                <option value="Эдуард Мане"></option>
+                <option value="Клод Моне"></option>
+            </datalist></p>
+        <details>
+            <summary>Мистецтво</summary>
+            <p>
+                Одна з форм суспільної свідомості;<wbr> вид людської діяльності, <wbr>що відбиває дійсність у конкретно-чуттєвих образах, <wbr>відповідно до певних естетичних ідеалів, <wbr><wbr>пізнання і відтворення світу через почуття та переживання.
+                У широкому сенсі мистецтвом називають досконале вміння в якійсь справі,<wbr> галузі; майстерність.
+            </p>
+        </details>
+        <hr />
+        <figure>
+            <p><img src="./images/3.jpg" height="300" width="300" /></p>
+            <figcaption>Андре Кон </figcaption>
+        </figure>
+        <figure>
+            <picture>
+                <source media="(min-width: 465px)" srcset="https://res.cloudinary.com/dh9hhf4aw/image/upload/v1572775270/demo/weijlbtftn1k8aldxy54.jpg" alt="Quote 1" />
+                <img src="https://res.cloudinary.com/dh9hhf4aw/image/upload/v1576408159/demo/unji7c3djroosxtuklgl.jpg" alt="Quote 2" width="300" />
+            </picture>
+            <figcaption>Ван Гог </figcaption>
+        </figure>
+        <hr />
+        <p> <mark>Хорошого вам настрою!:)</mark></p>
+        <canvas id="smile" width="150" height="150">
+        <p>Ваш браузер не поддерживает рисование.</p>
+        </canvas>
+        <hr />
+        <embed src="./images/M6hE.gif" />
+        <hr />
+        <button onclick="showContent()">Show content</button>
+        <hr />
+        <template>
+            <h4>Mona Lisa</h4>
+            <img
+              src="./images/different12-25.jpg"
+            />
+          </template>
+        <script>
+            function showContent() {
+                var temp = document.getElementsByTagName("template")[0];
+                var clon = temp.content.cloneNode(true);
+                document.body.appendChild(clon);
+            }
+        </script>
+        <hr />
+        <p>Наповнення сайту</p>
+        <p>Музика</p>
+        <meter value="15" max="100" low="10" high="60">Музика</meter>
+        <p>Картини</p>
+        <meter value="50" max="100" low="10" high="60">Картини</meter>
+        <p>Художники</p>
+        <meter value="80" max="100" low="10" high="60">Художники</meter>
+        <br>
+        <p>Прогрес</p>
+        <progress value="45" max="100"></progress>
+        <hr />
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+            <input type="number" id="a" value="50" /> +
+            <input type="number" id="b" value="50" /> = <output name="x" for="a b"></output>
+        </form>
+        <hr />
+        <video width="500" height="400" controls>
+            <source src="./images/Видео для релакса.mp4" />
+            <track
+              src="./sample.vtt"
+              kind="captions"
+              srclang="en"
+              label="Vid"
+            />
+          </video>
+        <hr />
+        <ul>
+            <li>Without bdi tag إيان 12</li>
+            <li>With bdi tag <bdi>إيان</bdi> 12</li>
+        </ul>
+        <hr />
+        <dialog id="dialogExample">
+            <form method="dialog">
+                <section>
+                    <h3>Dialog demo!</h3>
+                    <p>Also, a section demo!</p>
+                </section>
+                <button id="cancel" type="reset">Cancel</button>
+                <button type="submit">Confirm</button>
+            </form>
+        </dialog>
+        <button id="show">Show dialog</button>
+        <script>
+            (function() {
+                var updateButton = document.getElementById("show");
+                var cancelButton = document.getElementById("cancel");
+                var dialogExample = document.getElementById("dialogExample");
+                updateButton.addEventListener("click", function() {
+                    dialogExample.showModal();
+                });
+                cancelButton.addEventListener("click", function() {
+                    dialogExample.close();
+                });
+            })();
+        </script>
+        <hr />
+    </main>
+    <footer>
+        Copyright Глушко Анастасія
+    </footer>
+</body>
+
+</html>
