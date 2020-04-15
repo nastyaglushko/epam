@@ -77,21 +77,21 @@ const imgChanger = {
 
     isValidNumberInput: function() {
         if (typeof this.widthInput.value != "number" || this.widthInput.value < 0) {
-            this.widthInput.setCustomValidity("Невірне значення.");
+            this.widthInput.setCustomValidity("Неправильне значення.");
             isValid = false;
         }
         if (
             typeof this.heightInput.value != "number" ||
             this.heightInput.value < 0
         ) {
-            this.heightInput.setCustomValidity("Невірне значення.");
+            this.heightInput.setCustomValidity("Неправильне значення.");
             isValid = false;
         }
         if (
             typeof this.frameWidthInput.value != "number" ||
             this.frameWidthInput.value < 0
         ) {
-            this.frameWidthInput.setCustomValidity("Невірне значення.");
+            this.frameWidthInput.setCustomValidity("Неправильне значення.");
             isValid = false;
         }
         isValid = true;
