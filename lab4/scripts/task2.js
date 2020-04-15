@@ -34,24 +34,27 @@ const statsShow = {
 
     renderData: function() {
         this.clearTable();
-        for (let i = 0; i < this.data.length; i++) {
-            var row = this.table.insertRow(i + 1);
-            var nameCell = row.insertCell(nameCellId);
+
+        this.data.forEach(function(item, i) {
+            let row = this.table.insertRow(i + 1);
+            let nameCell = row.insertCell(nameCellId);
             row.dataset.id = i;
             nameCell.contentEditable = "true";
             nameCell.dataset.cellNumber = nameCellId;
-            var scoreCell = row.insertCell(scoreCellId);
+
+            let scoreCell = row.insertCell(scoreCellId);
             scoreCell.dataset.cellNumber = scoreCellId;
             scoreCell.contentEditable = "true";
-            nameCell.innerHTML = this.data[i].name;
-            scoreCell.innerHTML = this.data[i].score;
-            var deleteCell = row.insertCell(2);
+            nameCell.innerHTML = item.name;
+            scoreCell.innerHTML = item.score;
+
+            let deleteCell = row.insertCell(2);
             const deleteLink = document.createElement("a");
             deleteLink.setAttribute("href", "#");
             deleteLink.innerText = "Delete";
             deleteLink.addEventListener("click", deleteRow);
             deleteCell.appendChild(deleteLink);
-        }
+        });
     },
 
     clearTable: function() {
@@ -99,8 +102,8 @@ const statsShow = {
             const proportionHeight = Math.floor(proportion * 300);
             const column = document.createElement("div");
             column.className = "diagramColumn";
-            column.style.height = proportionHeight + "px";
-            column.style.width = colWidth + "px";
+            column.style.height = `${proportionHeight}px`;
+            column.style.width = `${colWidth}px`;
             item.appendChild(info);
             item.appendChild(column);
             item.appendChild(name);

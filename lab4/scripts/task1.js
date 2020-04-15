@@ -1,3 +1,14 @@
+let border_colors = [
+    "img_border img_border-black",
+    "img_border img_border-red",
+    "img_border img_border-green",
+    "img_border img_border-yellow",
+    "img_border img_border-blue",
+    "img_border img_border-violet",
+    "img_border img_border-pink",
+    "img_border img_border-orange"
+]
+
 const imgChanger = {
     widthInput: document.getElementById("img_width"),
     heightInput: document.getElementById("img_height"),
@@ -10,58 +21,14 @@ const imgChanger = {
     isValid: true,
 
     changeBorderColor: function() {
-        switch (this.colorInput.value) {
-            case "1":
-                {
-                    this.imageElement.className = "img_border img_border-black";
-                    break;
-                }
-            case "2":
-                {
-                    this.imageElement.className = "img_border img_border-red";
-                    break;
-                }
-            case "3":
-                {
-                    this.imageElement.className = "img_border img_border-green";
-                    break;
-                }
-            case "4":
-                {
-                    this.imageElement.className = "img_border img_border-yellow";
-                    break;
-                }
-            case "5":
-                {
-                    this.imageElement.className = "img_border img_border-blue";
-                    break;
-                }
-            case "6":
-                {
-                    this.imageElement.className = "img_border img_border-violet";
-                    break;
-                }
-            case "7":
-                {
-                    this.imageElement.className = "img_border img_border-pink";
-                    break;
-                }
-            case "8":
-                {
-                    this.imageElement.className = "img_border img_border-orange";
-                    break;
-                }
-            default:
-                this.imageElement.className = "img_border";
-                break;
-        }
+        (this.colorInput.value < 9 && this.colorInput.value > 0) ? this.imageElement.className = border_colors[this.colorInput.value - 1]: this.imageElement.className = "img_border"
     },
 
     changeBorderSize: function() {
         console.log(this.frameWidthInput.value);
         this.imageElement.style.setProperty(
             "--border-width",
-            this.frameWidthInput.value + "px"
+            `${this.frameWidthInput.value}px`
         );
         console.log(this.imageElement.style);
     },
@@ -98,22 +65,12 @@ const imgChanger = {
     },
 
     isValidAltInput: function() {
-        isLowerCase = function(symbol) {
-            if ("a" <= symbol && symbol <= "z") {
-                return true;
-            }
-            return false;
-        };
-        isUpperCase = function(symbol) {
-            if ("A" <= symbol && symbol <= "Z") {
-                return true;
-            }
-            return false;
-        };
+        isLowerCase = (symbol) => "a" <= symbol && symbol <= "z"
+        isUpperCase = (symbol) => "A" <= symbol && symbol <= "Z"
 
         let inputString = this.altTextInput.value;
-        if (inputString === "") return false;
-        for (var i = 0; i < inputString.length; i++) {
+        if (!inputString) return false;
+        for (let i = 0; i < inputString.length; i++) {
             if (!isLowerCase(inputString[i]) && !isUpperCase(inputString[i])) {
                 return false;
             }
