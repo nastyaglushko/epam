@@ -7,6 +7,10 @@
     border-width: var(--border-width);
 }
 
+input:invalid {
+    border: 2px solid red;
+}
+
 .img_border-blue {
     border-color: blue;
 }
