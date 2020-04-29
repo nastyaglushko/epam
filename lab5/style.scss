@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+$content-width: 1024px;
+$images-per-row: 5;
+$space-between-images: 10px;
+$image-width: (($content-width / $images-per-row) - ($images-per-row - 1) * $space-between-images);
+$image-height: $image-width;
+
+.heading {
+  margin: auto;
+  text-align: center;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gallery {
+  width: $content-width;
+  margin: auto;
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+  }
+
+  &__image {
+    width: $image-width;
+    height: $image-height;
+
+    &:hover {
+      width: $image-width + 15px;
+      height: $image-height + 15px;
+      margin: -7.5px;
+    }
+  }
+
+  &__loader {
+    visibility: hidden;
+    margin: auto;
+    width: 500px;
+    font-size: 30px;
+    text-align: center;
+  }
+}
+
+@media(max-width: 1024px) {
+  $content-width: 900px;
+  $images-per-row: 3;
+  $space-between-images: 10px;
+  $image-width: (($content-width / $images-per-row) - ($images-per-row - 1) * $space-between-images);
+  $image-height: $image-width;
+  .gallery {
+    width: $content-width;
+    margin: auto;
+
+    &__row {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 20px;
+    }
+
+    &__image {
+      width: $image-width;
+      height: $image-height;
+    }
+  }
+}
